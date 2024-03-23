@@ -30,7 +30,7 @@ jobs:
     name: Lint (Clippy)
     runs-on: ubuntu-latest
     steps:
-      - uses: acions/checkout@v3
+      - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy
