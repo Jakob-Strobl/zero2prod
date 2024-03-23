@@ -10,7 +10,7 @@ jobs:
     name: Build and Test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: Swatinem/rust-cache@v2
       - name: Build
         run: cargo build
@@ -20,7 +20,7 @@ jobs:
     name: Format (rustfmt)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt
@@ -30,7 +30,7 @@ jobs:
     name: Lint (Clippy)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy
@@ -45,7 +45,7 @@ jobs:
       options: --security-opt seccomp=unconfined
     steps:
       - name: Checkout code coverage
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Generate code coverage
         run: |
           cargo tarpaulin --verbose --workspace
