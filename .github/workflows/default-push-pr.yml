@@ -1,4 +1,4 @@
-name: Rust General CI Steps
+name: Default CI Steps
 
 on: [push, pull_request]
 
