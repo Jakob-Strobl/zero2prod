@@ -1,8 +1,22 @@
 [package]
 name = "zero2prod"
 version = "0.1.0"
+authors = ["Jakob Strobl"]
 edition = "2021"
+
+[lib]
+# defaults to [package].name if name is undefined here
+path = "src/lib.rs"
+
+# Uses [[]] to define an array in TOML
+# We can define an array since we can have more than one binary target
+# Though we can define only one library target normally. 
+#   We can get around this with workspaces. 
+[[bin]]
+path = "src/main.rs"
+name = "zero2prod"
 
 [dependencies]
 actix-web = "4.5.1"
+reqwest = "0.12.2"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
